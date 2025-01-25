@@ -114,7 +114,7 @@ class BbbChatEntry:
 
         chat = []
         for chattimeline in xml.iterfind('chattimeline'):
-            in_time = timedelta(seconds=int(chattimeline.attrib['in']))
+            in_time = timedelta(seconds=float(chattimeline.attrib['in']))
             name = chattimeline.attrib['name']
             message = chattimeline.attrib['message']
             chat.append(BbbChatEntry(name, message, in_time))
